@@ -1,0 +1,19 @@
+/* =============================================
+   home.css — Estilos exclusivos da página inicial
+   Estilos globais ficam em /css/style.css
+   ============================================= */
+
+.btn-theme {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-theme:hover {
+  transform: rotate(20deg) scale(1.1);
+}

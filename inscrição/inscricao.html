@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscrições – Interclasse MAF</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+  <header>
+    <a href="/pagina inicial/index.html" class="btn-voltar">← Voltar</a>
+    <h1>📝 Inscrições</h1>
+    <p class="subtitulo">Preencha os dados abaixo para se inscrever no Interclasse MAF 2025</p>
+    <button id="toggle-theme" class="btn-theme">🌙</button>
+  </header>
+ 
+  <main class="inscricao-main">
+ 
+    <!-- Formulário -->
+    <section class="form-section">
+      <div class="form-card">
+        <h2>Nova Inscrição</h2>
+ 
+        <div class="field-group">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" placeholder="Ex: João da Silva" autocomplete="off" />
+        </div>
+ 
+        <div class="field-group">
+          <label for="turma">Turma</label>
+          <select id="turma">
+            <option value="" disabled selected>Selecione sua turma</option>
+            <optgroup label="1º Ano">
+              <option value="1A">1º A</option>
+              <option value="1B">1º B</option>
+              <option value="1C">1º C</option>
+            </optgroup>
+            <optgroup label="2º Ano">
+              <option value="2A">2º A</option>
+              <option value="2B">2º B</option>
+              <option value="2C">2º C</option>
+            </optgroup>
+            <optgroup label="3º Ano">
+              <option value="3A">3º A</option>
+              <option value="3B">3º B</option>
+              <option value="3C">3º C</option>
+            </optgroup>
+          </select>
+        </div>
+ 
+        <div class="field-group">
+          <label>Esportes coletivos <span class="regra">(escolha até 2)</span></label>
+          <div class="esportes-grid">
+            <label class="esporte-card coletivo">
+              <input type="checkbox" name="coletivo" value="Futebol" />
+              <span class="esporte-icon">⚽</span>
+              <span>Futebol</span>
+            </label>
+            <label class="esporte-card coletivo">
+              <input type="checkbox" name="coletivo" value="Vôlei" />
+              <span class="esporte-icon">🏐</span>
+              <span>Vôlei</span>
+            </label>
+            <label class="esporte-card coletivo">
+              <input type="checkbox" name="coletivo" value="Basquete" />
+              <span class="esporte-icon">🏀</span>
+              <span>Basquete</span>
+            </label>
+          </div>
+        </div>
+ 
+        <div class="field-group">
+          <label>Esporte individual <span class="regra">(escolha 1)</span></label>
+          <div class="esportes-grid">
+            <label class="esporte-card individual">
+              <input type="radio" name="individual" value="Xadrez" />
+              <span class="esporte-icon">♟️</span>
+              <span>Xadrez</span>
+            </label>
+          </div>
+        </div>
+ 
+        <div id="feedback" class="feedback hidden"></div>
+ 
+        <button id="btn-inscrever" class="btn-primary">Confirmar Inscrição</button>
+      </div>
+    </section>
+ 
+    <!-- Lista de inscritos -->
+    <section class="lista-section">
+      <div class="lista-header">
+        <h2>Inscritos <span id="total-badge" class="badge">0</span></h2>
+        <div class="lista-filtros">
+          <select id="filtro-turma">
+            <option value="">Todas as turmas</option>
+            <option value="1A">1º A</option>
+            <option value="1B">1º B</option>
+            <option value="1C">1º C</option>
+            <option value="2A">2º A</option>
+            <option value="2B">2º B</option>
+            <option value="2C">2º C</option>
+            <option value="3A">3º A</option>
+            <option value="3B">3º B</option>
+            <option value="3C">3º C</option>
+          </select>
+          <select id="filtro-esporte">
+            <option value="">Todos os esportes</option>
+            <option value="Futebol">⚽ Futebol</option>
+            <option value="Vôlei">🏐 Vôlei</option>
+            <option value="Basquete">🏀 Basquete</option>
+            <option value="Xadrez">♟️ Xadrez</option>
+          </select>
+          <button id="btn-limpar-tudo" class="btn-danger">🗑️ Limpar tudo</button>
+        </div>
+      </div>
+ 
+      <!-- Contadores por esporte -->
+      <div class="contadores">
+        <div class="contador-item">
+          <span>⚽ Futebol</span>
+          <div class="barra-wrap">
+            <div class="barra" id="barra-futebol"></div>
+          </div>
+          <span class="contador-num" id="count-futebol">0/12</span>
+        </div>
+        <div class="contador-item">
+          <span>🏐 Vôlei</span>
+          <div class="barra-wrap">
+            <div class="barra" id="barra-volei"></div>
+          </div>
+          <span class="contador-num" id="count-volei">0/12</span>
+        </div>
+        <div class="contador-item">
+          <span>🏀 Basquete</span>
+          <div class="barra-wrap">
+            <div class="barra" id="barra-basquete"></div>
+          </div>
+          <span class="contador-num" id="count-basquete">0/12</span>
+        </div>
+        <div class="contador-item">
+          <span>♟️ Xadrez</span>
+          <div class="barra-wrap">
+            <div class="barra" id="barra-xadrez"></div>
+          </div>
+          <span class="contador-num" id="count-xadrez">0/12</span>
+        </div>
+      </div>
+ 
+      <div id="lista-inscritos" class="lista-inscritos">
+        <p class="lista-vazia">Nenhuma inscrição ainda.</p>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <footer>
+    &copy; 2025 Interclasse MAF - Todos os direitos reservados
+    <br> Created by Pedro Henrique &amp; Italo Lemos 3°A 2025
+  </footer>
+ 
+  <script src="/js/main.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

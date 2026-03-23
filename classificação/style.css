@@ -1,0 +1,202 @@
+/* =============================================
+   classificacao.css — Estilos da página de classificação
+   ============================================= */
+
+/* ── Layout principal ─────────────────────── */
+.classificacao-main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* ── Botão voltar ─────────────────────────── */
+.btn-voltar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.btn-voltar:hover {
+  opacity: 1;
+}
+
+/* ── Card de controle ─────────────────────── */
+.controle-card {
+  background: var(--card-bg, #fff);
+  border-radius: 14px;
+  padding: 1.2rem 1.6rem;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.controle-card label {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+.controle-card select {
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--border, #e0e0e0);
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  background: var(--input-bg, #f9f9f9);
+  color: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.controle-card select:focus {
+  border-color: var(--accent, #f0a500);
+}
+
+/* ── Tabela ───────────────────────────────── */
+.tabela-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+}
+
+thead tr {
+  background: #005bea;
+  color: #fff;
+}
+
+th {
+  padding: 12px 14px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border, #ececec);
+  text-align: center;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr {
+  background: var(--card-bg, #fff);
+  transition: background 0.15s;
+}
+
+tbody tr:hover {
+  filter: brightness(0.97);
+}
+
+/* ── Medalhas ─────────────────────────────── */
+.gold   { background: #fff8dc !important; }
+.silver { background: #f2f2f2 !important; }
+.bronze { background: #fdf0e0 !important; }
+
+/* ── Vantagem ─────────────────────────────── */
+.vantagem td {
+  font-weight: 700;
+}
+
+.vantagem td:last-child {
+  color: #27ae60;
+}
+
+/* ── Top jogadores ────────────────────────── */
+.top-player {
+  background: var(--card-bg, #fff);
+  padding: 1.4rem 1.8rem;
+  border-radius: 14px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+}
+
+.top-player h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  margin: 0 0 1rem 0;
+}
+
+.top-player ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.top-player li {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  background: var(--input-bg, #f9f9f9);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-player li:first-child  { border-left: 4px solid gold; }
+.top-player li:nth-child(2) { border-left: 4px solid silver; }
+.top-player li:nth-child(3) { border-left: 4px solid #cd7f32; }
+.top-player li:nth-child(n+4) { border-left: 4px solid var(--border, #e0e0e0); }
+
+.sem-dados {
+  font-family: 'Barlow', sans-serif;
+  opacity: 0.5;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ── Dark mode ────────────────────────────── */
+body.dark-mode .controle-card,
+body.dark-mode .top-player,
+body.dark-mode tbody tr {
+  background: #1e1e2e;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .controle-card select {
+  background: #2a2a3e;
+  border-color: #3a3a5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode td {
+  border-color: #2a2a3e;
+}
+
+body.dark-mode .top-player li {
+  background: #2a2a3e;
+}
+
+body.dark-mode .gold   { background: #2d2a00 !important; }
+body.dark-mode .silver { background: #252525 !important; }
+body.dark-mode .bronze { background: #2a1f0e !important; }

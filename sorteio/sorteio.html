@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorteio – Interclasse MAF</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="/index.html" class="btn-voltar">← Voltar</a>
+    <h1>🎲 Sorteio</h1>
+    <p class="subtitulo">Sorteio automático de confrontos por esporte — baseado nas inscrições</p>
+    <button id="toggle-theme" class="btn-theme">🌙</button>
+  </header>
+
+  <main class="sorteio-main">
+
+    <!-- Painel de controle -->
+    <section class="controle-section">
+      <div class="controle-card">
+        <h2>Configuração</h2>
+
+        <div class="field-group">
+          <label for="sel-esporte">Esporte</label>
+          <select id="sel-esporte">
+            <option value="" disabled selected>Selecione o esporte</option>
+            <option value="Futebol">⚽ Futebol</option>
+            <option value="Vôlei">🏐 Vôlei</option>
+            <option value="Basquete">🏀 Basquete</option>
+            <option value="Xadrez">♟️ Xadrez</option>
+          </select>
+        </div>
+
+        <!-- Info das equipes encontradas -->
+        <div id="info-equipes" class="info-equipes hidden">
+          <span id="info-texto"></span>
+          <span id="info-modo" class="badge-modo"></span>
+        </div>
+
+        <div id="aviso-sem-inscritos" class="aviso hidden">
+          ⚠️ Nenhuma turma inscrita neste esporte ainda.
+        </div>
+
+        <button id="btn-sortear" class="btn-primary" disabled>🎲 Realizar Sorteio</button>
+        <button id="btn-limpar-sorteio" class="btn-danger">🗑️ Limpar sorteio deste esporte</button>
+      </div>
+
+      <!-- Legenda das turmas -->
+      <div class="legenda-card" id="legenda-card">
+        <h3>Equipes inscritas</h3>
+        <div id="legenda-lista" class="legenda-lista"></div>
+      </div>
+    </section>
+
+    <!-- Resultado do sorteio -->
+    <section class="resultado-section" id="resultado-section">
+      <div id="resultado-vazio" class="resultado-vazio">
+        <span class="vazio-icon">🎲</span>
+        <p>Selecione um esporte e realize o sorteio para ver os confrontos aqui.</p>
+      </div>
+
+      <!-- Fase de grupos (≤ 8 equipes) -->
+      <div id="fase-grupos" class="hidden">
+        <div class="fase-header">
+          <h2>📋 Fase de Grupos</h2>
+          <span class="regra-badge">Classificam-se as equipes com 8+ pontos</span>
+        </div>
+        <div id="grupos-container" class="grupos-container"></div>
+      </div>
+
+      <!-- Mata-mata (> 8 equipes) ou Playoffs -->
+      <div id="fase-playoffs" class="hidden">
+        <div class="fase-header">
+          <h2>⚔️ Playoffs</h2>
+          <span id="playoffs-subtitulo" class="regra-badge"></span>
+        </div>
+        <div id="chave-container" class="chave-container"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Interclasse MAF - Todos os direitos reservados
+    <br> Created by Pedro Henrique &amp; Italo Lemos 3°A 2025
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

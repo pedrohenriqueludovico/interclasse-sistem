@@ -1,0 +1,343 @@
+/* Fonte */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f5f7fa;
+  color: #222;
+  text-align: center;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(270deg, #005bea, #00c6fb, #00f7a3);
+  background-size: 600% 600%;
+  animation: gradientMove 8s ease infinite;
+  color: #fff;
+  padding: 40px 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #222;
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 91, 234, 0.3);
+  background: linear-gradient(145deg, #ffffff, #e6f2ff);
+}
+
+/* Seção Sobre */
+.sobre {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Rodapé */
+footer {
+  background: #111;
+  color: #aaa;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 30px;
+}
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .card {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .sobre {
+  background: #1f1f1f;
+  color: #f1f1f1;
+}
+
+.btn-theme {
+  background: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+body.dark-mode .btn-theme {
+  background: #333;
+  color: #fff;
+}
+/* Botão flutuante */
+.btn-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1000;
+}
+
+.btn-theme:hover {
+  transform: scale(1.1);
+  background: #f0f0f0;
+}
+
+body.dark-mode .btn-theme {
+  background: #333;
+  color: #fff;
+}
+
+body.dark-mode .btn-theme:hover {
+  background: #444;
+}
+
+/* Transição suave para tema escuro */
+body,
+.card,
+.sobre,
+footer,
+header h1,
+.subtitulo {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.btn-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.btn-theme:hover {
+  transform: scale(1.1);
+}
+
+.dark-mode .btn-theme {
+  background: #333;
+  color: #f1c40f; /* cor do sol */
+}
+/* ===== Notícias ===== */
+.noticias {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.noticias h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.noticias-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.noticia {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.noticia:hover {
+  transform: translateY(-5px);
+}
+
+.noticia img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.noticia-info {
+  padding: 15px;
+}
+
+.noticia-info h3 {
+  margin-top: 0;
+}
+
+.btn-leia-mais {
+  margin-top: 10px;
+  background: #005bea;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-leia-mais:hover {
+  background: #003d99;
+}
+
+/* Destaque primeira notícia */
+.noticia.destaque {
+  grid-column: span 2;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.fechar {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark-mode .noticia,
+body.dark-mode .modal-content {
+  background: #222;
+  color: #fff;
+}
+
+body.dark-mode .btn-leia-mais {
+  background: #00c6fb;
+  color: #000;
+}
+
+body.dark-mode .btn-leia-mais:hover {
+  background: #00f7a3;
+}
+.campeoes {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.campeoes-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card-campeao {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 200px;
+}
+
+.card-campeao:hover {
+  transform: translateY(-5px);
+}
+
+.card-campeao .icon {
+  font-size: 2rem;
+}
+
+.card-campeao.destaque {
+  background: linear-gradient(135deg, #ffd700, #ffc107);
+  color: #222;
+  font-weight: bold;
+}
+.campeoes h2 {
+  color: #005bea; /* Azul */
+}

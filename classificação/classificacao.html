@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classificação – Interclasse MAF</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="/pagina inicial/index.html" class="btn-voltar">← Voltar</a>
+    <h1>🥇 Classificação</h1>
+    <p class="subtitulo">Acompanhe a classificação geral do Interclasse MAF 2025</p>
+    <button id="toggle-theme" class="btn-theme">🌙</button>
+  </header>
+
+  <main class="classificacao-main">
+
+    <div class="controle-card">
+      <label for="esporte">Escolha o esporte:</label>
+      <select id="esporte">
+        <option value="Basquete">🏀 Basquete</option>
+        <option value="Futebol">⚽ Futebol</option>
+        <option value="Vôlei">🏐 Vôlei</option>
+        <option value="Xadrez">♟️ Xadrez</option>
+      </select>
+    </div>
+
+    <div class="tabela-wrap">
+      <table>
+        <thead>
+          <tr id="table-header"></tr>
+        </thead>
+        <tbody id="tabela-classificacao"></tbody>
+      </table>
+    </div>
+
+    <div class="top-player">
+      <h3>🏆 Jogadores em Destaque</h3>
+      <ul id="jogadores-destaque"></ul>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Interclasse MAF - Todos os direitos reservados
+    <br> Created by Pedro Henrique &amp; Italo Lemos 3°A 2025
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

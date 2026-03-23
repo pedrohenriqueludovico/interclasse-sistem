@@ -1,0 +1,433 @@
+/* =============================================
+   inscricao.css — Estilos da página de inscrição
+   ============================================= */
+
+/* ── Layout principal ─────────────────────── */
+.inscricao-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .inscricao-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Botão voltar ─────────────────────────── */
+.btn-voltar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.btn-voltar:hover {
+  opacity: 1;
+}
+
+/* ── Card do formulário ───────────────────── */
+.form-card {
+  background: var(--card-bg, #fff);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form-card h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* ── Campos ───────────────────────────────── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-group label {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.75;
+}
+
+.field-group input[type="text"],
+.field-group select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border, #e0e0e0);
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  background: var(--input-bg, #f9f9f9);
+  color: inherit;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.field-group input[type="text"]:focus,
+.field-group select:focus {
+  border-color: var(--accent, #f0a500);
+}
+
+.regra {
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-transform: none;
+}
+
+/* ── Grid de esportes ─────────────────────── */
+.esportes-grid {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.esporte-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.75rem 1.2rem;
+  border: 2px solid var(--border, #e0e0e0);
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  user-select: none;
+  position: relative;
+}
+
+.esporte-card input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.esporte-icon {
+  font-size: 1.6rem;
+}
+
+.esporte-card:hover {
+  border-color: var(--accent, #f0a500);
+  transform: translateY(-2px);
+}
+
+.esporte-card.selecionado {
+  border-color: var(--accent, #f0a500);
+  background: var(--accent-light, #fff8e7);
+}
+
+.esporte-card.lotado {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Feedback ─────────────────────────────── */
+.feedback {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.feedback.erro {
+  background: #ffeaea;
+  color: #c0392b;
+  border: 1.5px solid #e74c3c;
+}
+
+.feedback.sucesso {
+  background: #eafaf1;
+  color: #1e8449;
+  border: 1.5px solid #27ae60;
+}
+
+.feedback.hidden {
+  display: none;
+}
+
+/* ── Botões ───────────────────────────────── */
+.btn-primary {
+  padding: 0.9rem;
+  background: var(--accent, #f0a500);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+  background: #d4920a;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #e74c3c;
+  border: 1.5px solid #e74c3c;
+  border-radius: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-danger:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+
+/* ── Seção da lista ───────────────────────── */
+.lista-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.lista-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.lista-header h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge {
+  background: var(--accent, #f0a500);
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 20px;
+}
+
+.lista-filtros {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.lista-filtros select {
+  padding: 0.4rem 0.75rem;
+  border: 1.5px solid var(--border, #e0e0e0);
+  border-radius: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem;
+  background: var(--input-bg, #f9f9f9);
+  color: inherit;
+  outline: none;
+}
+
+/* ── Contadores de vagas ──────────────────── */
+.contadores {
+  background: var(--card-bg, #fff);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contador-item {
+  display: grid;
+  grid-template-columns: 110px 1fr 50px;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.barra-wrap {
+  background: var(--border, #ececec);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.barra {
+  height: 100%;
+  background: var(--accent, #f0a500);
+  border-radius: 999px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.barra.cheia {
+  background: #e74c3c;
+}
+
+.contador-num {
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ── Lista de inscritos ───────────────────── */
+.lista-inscritos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.lista-vazia {
+  font-family: 'Barlow', sans-serif;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.inscrito-item {
+  background: var(--card-bg, #fff);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-family: 'Barlow', sans-serif;
+  animation: fadeIn 0.25s ease;
+}
+
+.inscrito-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.inscrito-nome {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.inscrito-detalhes {
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+.inscrito-esportes {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.tag-esporte {
+  background: var(--accent-light, #fff8e7);
+  color: var(--accent, #f0a500);
+  border: 1px solid var(--accent, #f0a500);
+  border-radius: 6px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.btn-remover {
+  background: transparent;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-remover:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Dark mode ────────────────────────────── */
+body.dark-mode .form-card,
+body.dark-mode .contadores,
+body.dark-mode .inscrito-item {
+  background: #1e1e2e;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .field-group input[type="text"],
+body.dark-mode .field-group select,
+body.dark-mode .lista-filtros select {
+  background: #2a2a3e;
+  border-color: #3a3a5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode .esporte-card {
+  border-color: #3a3a5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode .esporte-card.selecionado {
+  background: #2d2a1a;
+  border-color: #f0a500;
+}
+
+body.dark-mode .barra-wrap {
+  background: #3a3a5c;
+}
+
+body.dark-mode .tag-esporte {
+  background: #2d2a1a;
+}
+
+body.dark-mode .feedback.erro {
+  background: #3b1a1a;
+  color: #ff6b6b;
+  border-color: #e74c3c;
+}
+
+body.dark-mode .feedback.sucesso {
+  background: #1a3b2a;
+  color: #6bffb0;
+  border-color: #27ae60;
+}

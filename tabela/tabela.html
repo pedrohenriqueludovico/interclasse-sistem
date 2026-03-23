@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela de Jogos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📋 Tabela de Jogos</h1>
+  </header>
+
+  <main>
+    <form id="form-jogo">
+      <select id="esporte" required>
+        <option value="">Selecione o Esporte</option>
+        <option value="Futebol">⚽ Futebol</option>
+        <option value="Basquete">🏀 Basquete</option>
+        <option value="Vôlei">🏐 Vôlei</option>
+        <option value="Xadrez">♟️ Xadrez</option>
+      </select>
+      <input type="text" id="rodada" placeholder="Rodada (ex: 1, Quartas, Final)" required>
+      <input type="text" id="timeA" placeholder="Time A" required>
+      <input type="number" id="pontosA" placeholder="Pontos/Placar A" required>
+      <input type="text" id="timeB" placeholder="Time B" required>
+      <input type="number" id="pontosB" placeholder="Pontos/Placar B" required>
+      <button type="submit">Adicionar Resultado</button>
+      <button type="button" id="btn-limpar">Limpar Resultados</button>
+    </form>
+
+    <h2>Resultados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rodada</th>
+          <th>Esporte</th>
+          <th>Time A</th>
+          <th>Placar</th>
+          <th>Time B</th>
+        </tr>
+      </thead>
+      <tbody id="lista-jogos"></tbody>
+    </table>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

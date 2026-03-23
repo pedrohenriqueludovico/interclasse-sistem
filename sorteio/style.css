@@ -1,0 +1,391 @@
+/* =============================================
+   sorteio.css — Estilos da página de sorteio
+   ============================================= */
+
+/* ── Layout principal ─────────────────────── */
+.sorteio-main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .sorteio-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Botão voltar ─────────────────────────── */
+.btn-voltar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.btn-voltar:hover { opacity: 1; }
+
+/* ── Painel de controle ───────────────────── */
+.controle-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.controle-card,
+.legenda-card {
+  background: var(--card-bg, #fff);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.controle-card h2,
+.legenda-card h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* ── Campos ───────────────────────────────── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-group label {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+.field-group select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border, #e0e0e0);
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  background: var(--input-bg, #f9f9f9);
+  color: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.field-group select:focus {
+  border-color: var(--accent, #f0a500);
+}
+
+/* ── Info equipes ─────────────────────────── */
+.info-equipes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--accent-light, #fff8e7);
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.badge-modo {
+  background: var(--accent, #f0a500);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.aviso {
+  padding: 0.7rem 1rem;
+  background: #fff3cd;
+  border: 1.5px solid #ffc107;
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  color: #856404;
+}
+
+/* ── Botões ───────────────────────────────── */
+.btn-primary {
+  padding: 0.9rem;
+  background: var(--accent, #f0a500);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #d4920a;
+  transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  padding: 0.6rem 1rem;
+  background: transparent;
+  color: #e74c3c;
+  border: 1.5px solid #e74c3c;
+  border-radius: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-danger:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+
+/* ── Legenda de equipes ───────────────────── */
+.legenda-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+}
+
+.legenda-cor {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.legenda-vazia {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* ── Resultado vazio ──────────────────────── */
+.resultado-vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 300px;
+  opacity: 0.4;
+  font-family: 'Barlow', sans-serif;
+  text-align: center;
+}
+
+.vazio-icon {
+  font-size: 4rem;
+}
+
+/* ── Cabeçalho das fases ──────────────────── */
+.fase-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.fase-header h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.regra-badge {
+  background: #eafaf1;
+  color: #1e8449;
+  border: 1.5px solid #27ae60;
+  border-radius: 20px;
+  padding: 0.2rem 0.8rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ── Fase de grupos ───────────────────────── */
+.grupos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.grupo-card {
+  background: var(--card-bg, #fff);
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+  animation: fadeIn 0.3s ease;
+}
+
+.grupo-titulo {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--accent, #f0a500);
+}
+
+.confronto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border, #f0f0f0);
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  gap: 0.5rem;
+}
+
+.confronto:last-child {
+  border-bottom: none;
+}
+
+.equipe-nome {
+  font-weight: 700;
+  flex: 1;
+}
+
+.equipe-nome.direita {
+  text-align: right;
+}
+
+.vs-badge {
+  background: var(--accent, #f0a500);
+  color: #fff;
+  font-family: 'Anton', sans-serif;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* ── Chave de mata-mata ───────────────────── */
+.chave-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rodada-titulo {
+  font-family: 'Anton', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.confrontos-rodada {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.8rem;
+}
+
+.confronto-card {
+  background: var(--card-bg, #fff);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  animation: fadeIn 0.3s ease;
+  border-left: 4px solid var(--accent, #f0a500);
+}
+
+.confronto-card .equipe {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.confronto-card .separador {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0.4;
+  padding-left: 0.2rem;
+}
+
+/* ── Utilitários ──────────────────────────── */
+.hidden { display: none !important; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Dark mode ────────────────────────────── */
+body.dark-mode .controle-card,
+body.dark-mode .legenda-card,
+body.dark-mode .grupo-card,
+body.dark-mode .confronto-card {
+  background: #1e1e2e;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .field-group select {
+  background: #2a2a3e;
+  border-color: #3a3a5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode .info-equipes {
+  background: #2d2a1a;
+}
+
+body.dark-mode .aviso {
+  background: #2d2a00;
+  border-color: #ffc107;
+  color: #ffd966;
+}
+
+body.dark-mode .confronto {
+  border-color: #2a2a3e;
+}
+
+body.dark-mode .regra-badge {
+  background: #1a2d1e;
+  color: #6bffb0;
+  border-color: #27ae60;
+}
