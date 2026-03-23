@@ -1,1 +1,124 @@
-<meta http-equiv="refresh" content="0; url='pagina inicial/index.html'"> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interclasse MAF</title>
+  <link rel="stylesheet" href="/pagina inicial/home.css">
+<link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>🏆 Interclasse MAF</h1>
+    <p class="subtitulo">Bem-vindo ao primeiro portal acadêmico-esportivo do Interclasse MAF – onde a paixão pelo esporte encontra a união da nossa escola!</p>
+    <button id="toggle-theme" class="btn-theme">🌙</button>
+  </header>
+
+  <main>
+    <div class="cards-container">
+      <a href="/tabela/tabela.html" target="_blank" class="card">
+        <span class="icon">📋</span>
+        <span>Tabela</span>
+      </a>
+      <a href="/inscrição/inscricao.html" target="_blank" class="card">
+        <span class="icon">📝</span>
+        <span>Inscrições</span>
+      </a>
+      <a href="/sorteio/sorteio.html" target="_blank" class="card">
+        <span class="icon">🎲</span>
+        <span>Sorteio</span>
+      </a>
+      <a href="/classificação/classificacao.html" target="_blank" class="card">
+        <span class="icon">🥇</span>
+        <span>Classificação</span>
+      </a>
+    </div>
+
+    <section class="sobre">
+      <p>⚡ Este site foi criado para centralizar todas as informações do <strong>Interclasse da escola PEI Maria Aparecida Ferreira</strong>, de forma rápida, bonita e acessível para todos os alunos.</p>
+    </section>
+  </main>
+
+  <!-- Notícias -->
+  <section class="noticias">
+    <h2>📰 Últimas Notícias</h2>
+    <div class="noticias-container">
+      <article class="noticia destaque">
+        <img src="/img/Gemini_Generated_Image_rl2k99rl2k99rl2k.png" alt="Imagem da notícia">
+        <div class="noticia-info">
+          <h3>Grande Abertura do Interclasse</h3>
+          <p>A cerimônia de abertura será realizada no dia (?) do mês (?), com apresentações e desfile dos times.</p>
+          <button class="btn-leia-mais" data-noticia="1">Leia mais</button>
+        </div>
+      </article>
+
+      <article class="noticia">
+        <img src="/img/tenis_pontuacao-aspect-ratio-512-320.webp" alt="Imagem da notícia">
+        <div class="noticia-info">
+          <h3>Regras de Pontuação</h3>
+          <p>Confira as atualizações nas regras para o torneio de futebol e vôlei deste ano.</p>
+          <button class="btn-leia-mais" data-noticia="2">Leia mais</button>
+        </div>
+      </article>
+
+      <article class="noticia">
+        <img src="/img/images.jpg" alt="Imagem da notícia">
+        <div class="noticia-info">
+          <h3>Treinamentos Abertos</h3>
+          <p>Participe dos treinos livres para melhorar a preparação dos times antes do torneio.</p>
+          <button class="btn-leia-mais" data-noticia="3">Leia mais</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Seção Campeões -->
+  <section class="campeoes">
+    <h2>🏅 Últimos  Campeões</h2>
+    <div class="campeoes-container">
+      <article class="noticia destaque card-campeao">
+        <img src="/img/ntc_1649559199.jpg" alt="Campeão Geral">
+        <div class="noticia-info">
+          <h3>Campeão Geral</h3>
+          <p>Turma: </p>
+        </div>
+      </article>
+    </div>
+    <button id="ver-todos-campeoes" class="btn-leia-mais">Ver todos</button>
+  </section>
+
+  <!-- Modal Campeões -->
+  <div id="modal-campeoes" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h3>Campeões de 2024</h3>
+      <ul>
+        <li>🏆 <strong>Campeão Geral:</strong> </li>
+        <li>⚽ <strong>Futebol:</strong> </li>
+        <li>🏐 <strong>Vôlei:</strong> </li>
+        <li>🏀 <strong>Basquete:</strong> </li>
+        <li>♟️ <strong>Xadrez:</strong> </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal de Notícias -->
+  <div id="modal-noticia" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h3 id="modal-titulo"></h3>
+      <p id="modal-conteudo"></p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; Interclasse - Todos os direitos reservados
+    <br> Created by Pedro Henrique
+  </footer>
+
+  <script src="/pagina inicial/script.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
